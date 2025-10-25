@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS Books (
     author_id INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     published_date DATE,
-    FOREIGN KEY (author_id) REFERENCES authors(name);
+    FOREIGN KEY (author_id) REFERENCES Authors(name);
 );
 
 CREATE TABLE IF NOT EXISTS Authors (
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS Orders (
     order_id INT PRIMARY KEY,
     customer_id INT NOT NULL,
     order_date DATE NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 CREATE TABLE IF NOT EXISTS Order_Details (
@@ -35,6 +35,6 @@ CREATE TABLE IF NOT EXISTS Order_Details (
     order_id INT NOT NULL,
     book_id VARCHAR(13) NOT NULL,
     quantity DECIMAL(10, 2)NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    FOREIGN KEY (book_id) REFERENCES books(book_id)
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
