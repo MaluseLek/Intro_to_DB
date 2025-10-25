@@ -33,8 +33,8 @@ CREATE TABLE IF NOT EXISTS Orders (
 CREATE TABLE IF NOT EXISTS Order_Details (
     orderdetailid INT PRIMARY KEY,
     order_id INT NOT NULL,
-    book_id VARCHAR(13) NOT NULL,
-    quantity DECIMAL(10, 2)NOT NULL,
+    book_id INT NOT NULL,
+    quantity DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
     FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
