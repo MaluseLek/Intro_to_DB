@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS books (
 
 CREATE TABLE IF NOT EXISTS authors (
     author_id VARCHAR(13) PRIMARY KEY,
-    name VARCHAR(215) NOT NULL
+    author_name VARCHAR(215) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS customers (
